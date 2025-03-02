@@ -17,7 +17,7 @@ export const getAllWebsites = async () => {
 
 export const getPagesOfWebsite = async (websiteId) => {
     try {
-        const response = await api.get(`/pages/${websiteId}`);
+        const response = await api.get(`/websites/${websiteId}/pages`);
         return response.data;
     } catch (error) {
         console.error('Error retrieving pages.', error);
@@ -27,8 +27,8 @@ export const getPagesOfWebsite = async (websiteId) => {
 
 export const getVisitCountForPage = async (pageId, startDate, endDate) => {
     try {
-        const params = startDate && endDate ? { startDate: startDate.toISOString(), endDate: endDate.toISOString() } : {};
-        const response = await api.get(`/visits/count/${pageId}`, { params });
+        const params = startDate && endDate ? { start: startDate.toISOString(), end: endDate.toISOString() } : {};
+        const response = await api.get(`/pages/${pageId}/visits/count`, { params });
         return response.data;
     } catch (error) {
         console.error('Error fetching visit count', error);

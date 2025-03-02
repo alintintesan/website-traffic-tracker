@@ -17,10 +17,6 @@ export class VisitService {
         private visitRepository: Repository<Visit>
     ) { }
 
-    async getAllVisits(): Promise<Visit[]> {
-        return this.visitRepository.find();
-    }
-
     async getVisitInfoForWebsite(websiteId: number): Promise<VisitInfo[]> {
         const queryBuilder = this.visitRepository.createQueryBuilder('visit')
             .innerJoin('visit.page', 'page')

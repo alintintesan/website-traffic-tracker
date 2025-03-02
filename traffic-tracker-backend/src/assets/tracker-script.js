@@ -11,7 +11,7 @@
         localStorage.setItem(pageUrl, visitExpiration.toISOString());
         console.log(`New unique visit to: ${pageUrl} detected. Visit will expire at ${visitExpiration}.`);
 
-        fetch('http://localhost:3000/tracker/visit', {
+        fetch('http://localhost:3000/visits', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url: pageUrl, timestamp: now.toISOString() })

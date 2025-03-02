@@ -17,11 +17,6 @@ const PageList = ({ websiteId, onSelectPage }) => {
     getPages();
   }, []);
 
-  const handlePageSelect = (pageId, pagePath) => {
-    setSelectedPageId(pageId);
-    setSelectedPagePath(pagePath);
-  };
-
   return (
     <div className='list-container'>
       {pages.map((page) => (
