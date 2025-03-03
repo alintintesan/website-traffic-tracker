@@ -82,3 +82,5 @@ This solution uses a simple MySQL database which is running locally, that stores
 
     - Each page has either one or multiple visits.
     - Each visit was made to only one page.
+
+![alt text](https://github.com/alintintesan/website-traffic-tracker/blob/main/database-schema.png)
