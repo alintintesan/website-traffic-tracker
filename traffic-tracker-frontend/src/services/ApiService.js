@@ -29,7 +29,7 @@ export const getVisitCountForPage = async (pageId, startDate, endDate) => {
     try {
         const params = startDate && endDate ? { start: startDate.toISOString(), end: endDate.toISOString() } : {};
         const response = await api.get(`/pages/${pageId}/visits/count`, { params });
-        return response.data;
+        return response.data.visitsCount;
     } catch (error) {
         console.error('Error fetching visit count', error);
         throw error;

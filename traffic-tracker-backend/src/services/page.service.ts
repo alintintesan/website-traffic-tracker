@@ -10,7 +10,11 @@ export class PageService {
         private pageRepository: Repository<Page>
     ) { }
 
+    async getPageById(pageId: number): Promise<Page | null> {
+        return this.pageRepository.findOne({ where: { id: pageId } });
+    }
+
     async getPagesOfWebsite(websiteId: number): Promise<Page[]> {
-        return this.pageRepository.find({ where: { id: websiteId } });
+        return this.pageRepository.find({ where: { website: { id: websiteId } } });
     }
 }

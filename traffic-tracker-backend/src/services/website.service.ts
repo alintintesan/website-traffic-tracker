@@ -11,6 +11,10 @@ export class WebsiteService {
         private websiteRepository: Repository<Website>
     ) { }
 
+    async getWebsiteById(websiteId: number): Promise<Website | null> {
+        return this.websiteRepository.findOne({ where: { id: websiteId } });
+    }
+
     async getAllWebsites(): Promise<Website[]> {
         return this.websiteRepository.find();
     }
