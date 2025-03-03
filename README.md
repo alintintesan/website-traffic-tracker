@@ -84,3 +84,10 @@ This solution uses a simple MySQL database which is running locally, that stores
     - Each visit was made to only one page.
 
 ![alt text](https://github.com/alintintesan/website-traffic-tracker/blob/main/database-schema.png)
+
+## Additional AI features for future development
+### Real-Time Anomaly Detection
+For this feature, I would use an event-driven approach where I analyze the visit data as it is received by the server and offer a push notification or websockets mechanism to notify subscribed users in real-time if there are any anomalies detected.
+
+### Bot Detection 
+For this feature, I would update the tracker script first to collect additional data, such as: user-agent for detecting bot interaction, IP address to check the frequency of visits and use browser fingerprint to determine any suspicious patterns in the page interactions. I would then use Hugging Face's pre-trained models to detect bot interaction based on the collected data.
