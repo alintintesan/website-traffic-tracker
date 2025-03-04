@@ -28,6 +28,8 @@ const App = () => {
   const handleWebsiteSelect = (websiteId, websiteOrigin) => {
     setSelectedWebsiteId(websiteId);
     setSelectedWebsiteOrigin(websiteOrigin);
+    setSelectedPageId(null);
+    setSelectedPagePath(null);
   };
 
   const handlePageSelect = (pageId, pagePath) => {

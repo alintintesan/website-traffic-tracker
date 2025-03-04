@@ -15,7 +15,7 @@ const PageList = ({ websiteId, onSelectPage }) => {
     };
 
     getPages();
-  }, []);
+  }, [websiteId]);
 
   return (
     <div className='list-container'>
