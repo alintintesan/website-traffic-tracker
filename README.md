@@ -41,7 +41,7 @@ Base URL: `http://localhost:3000`
 - `GET /websites/:websiteId/traffic/optimize` provides suggestions for optimizing traffic using the tracked visits of all the pages in the website with `websiteId` id. The result is a JSON object with the following structure: `{ result: '<The optimization analysis result>' }`.
 
 ### traffic-tracker-frontend
-This component contains a simple React user-interface, that can display visit counts for each page of each website. First, a website must be selected, then, all the pages that belong to that website will be displayed and after selecting a page, the total visit count for that page will be displayed on the right. There's also an additional functionality that provides only the visit count that was tracked during a certain time period. This period can be adjusted using the `Filter visit count by time period` filter.
+This component contains a simple React user-interface, that can display visit counts for each page of each website. First, a website must be selected, then, all the pages that belong to that website will be displayed and after selecting a page, the total visit count for that page will be displayed on the right. There's also an additional functionality that provides only the visit count that was tracked during a certain time period. This period can be adjusted using the `Filter visit count by time period` filter. In order to start it, navigate to the `traffic-tracker-front-end` directory and run `npm run start`.
 
 ### demo-websites
 A number of five demo websites were created in order to test the tracker. Each one of them (their five html pages) is statically served by a http-server so it would mimic a real website with a domain and path. Running the servers can be done by running the batch script: `serve-websites.bat`. This will start five servers, each one corresponding to a website as such:
@@ -82,3 +82,12 @@ This solution uses a simple MySQL database which is running locally, that stores
 
     - Each page has either one or multiple visits.
     - Each visit was made to only one page.
+
+![alt text](https://github.com/alintintesan/website-traffic-tracker/blob/main/database-schema.png)
+
+## Additional AI features for future development
+### Real-Time Anomaly Detection
+For this feature, I would use an event-driven approach where I analyze the visit data as it is received by the server and offer a push notification or websockets mechanism to notify subscribed users in real-time if there are any anomalies detected.
+
+### Bot Detection 
+For this feature, I would update the tracker script first to collect additional data, such as: user-agent for detecting bot interaction, IP address to check the frequency of visits and use browser fingerprint to determine any suspicious patterns in the page interactions. I would then use Hugging Face's pre-trained models to detect bot interaction based on the collected data.
