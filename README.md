@@ -71,7 +71,7 @@ This way, each website can be opened in the browser and be navigated to by openi
 Each page from each website has the tracker script added to it, so accesing the pages will track the unique visits.
 
 ### MySQL database
-This solution uses a simple MySQL database which is running locally, that stores the visits data. It consists of three tables: `website`, `page` and `visit`. Each table has an index set on the primary `id` column to speed up select and join operations used in the `traffic-tracker-backend`. The relations between tables are:
+This solution uses a simple MySQL database which is running locally, that stores the visits data. It consists of three tables: `website`, `page` and `visit`. Each table has an index set on the primary `id` column and on the foreign key columns (`websiteId` in `page` table and `pageId` in `visit` table) to speed up select and join operations used in the `traffic-tracker-backend`. The relations between tables are:
 
 - `website` - `page` : `1:N` (One to Many)
 
